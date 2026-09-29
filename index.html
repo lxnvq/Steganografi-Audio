@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Steganografi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Audio Steganografi</h1>
+        <p class="subtitle">Menyembunyikan pesan menggunakan metode LSB</p>
+
+        <!-- ENCODE -->
+        <div class="card">
+            <h2>🔒 Encode - Sembunyikan Pesan</h2>
+
+            <label>Pilih Audio WAV</label>
+            <input type="file" id="audioInput" accept=".wav">
+
+            <label>Pesan Rahasia</label>
+            <textarea id="message" placeholder="Masukkan pesan rahasia..."></textarea>
+
+            <button onclick="encodeMessage()">
+                Sembunyikan Pesan
+            </button>
+
+            <p id="encodeStatus"></p>
+        </div>
+
+
+        <!-- DECODE -->
+        <div class="card">
+            <h2>🔓 Decode - Ambil Pesan</h2>
+
+            <label>Pilih Audio yang Sudah Disisipi Pesan</label>
+            <input type="file" id="encodedAudio" accept=".wav">
+
+            <button onclick="decodeMessage()">
+                Ambil Pesan
+            </button>
+
+            <textarea id="decodedMessage"
+                      placeholder="Pesan yang ditemukan akan muncul di sini..."
+                      readonly></textarea>
+
+            <p id="decodeStatus"></p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
